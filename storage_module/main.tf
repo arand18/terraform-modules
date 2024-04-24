@@ -1,13 +1,3 @@
-terraform {
-  required_version = ">= 1.6.5"
-  backend "remote" {
-    organization = "AlishaTForg"
-    workspaces {
-      name = "Terraformgithubactions"
-    }
-  }
-}
-
 
 locals {
 sa_name = format("storageacct%s%s000", var.assetname, var.enviroment)
