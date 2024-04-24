@@ -1,11 +1,8 @@
-
 locals {
 sa_name = format("storageacct%s%s000", var.assetname, var.enviroment)
 }
-
-
 module "storage_module" {
-  source = "https://github.com/arand18/terraform-modules.git/storage_module"
+  source = "git@github.com/arand18/terraform-modules.git/storage_module.git"
 
   count = var.instance_count
 
