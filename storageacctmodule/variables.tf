@@ -22,3 +22,8 @@ variable "instance_count" {
   default = 1
   description = "how many you want to deploy"
 }
+
+variable "owner" {
+  type = string
+  description = "name of owner"
+}

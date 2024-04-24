@@ -22,7 +22,6 @@ locals {
 sa_name = format("storageacct%s%s000", var.assetname, var.enviroment)
 }
 
-
 resource "azurerm_storage_account" "storageaccount" {
   count = var.instance_count
 
@@ -34,9 +33,13 @@ resource "azurerm_storage_account" "storageaccount" {
   account_tier = "Standard"
   account_replication_type = "LRS"
   access_tier = "Hot"
+  enable_https_traffic_only = true
+  public_network_access_enabled = true
 
   tags = {
     enviroment = var.enviroment
+    owner = var.owner
+    location = var.resource_group_location
   }
 
 }
