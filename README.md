@@ -11,7 +11,7 @@ This repo will be used to house the Terraform modules I will use to deploy infra
 ## Usage
 ~~~
 module "storage_module" {
-  source = "github.com/arand18/terraform-modules//storage_module"
+  source = "github.com/arand18/terraform-modules/storage_module"
 
   name                     = "${local.storage_name}001"
   resource_group_name      = azurerm_resource_group.rg.name

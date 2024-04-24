@@ -24,7 +24,7 @@ sa_name = format("storageacct%s%s000", var.assetname, var.enviroment)
 
 
 module "storage_module" {
-  source = "github.com/arand18/terraform-modules//storage_module"
+  source = "github.com/arand18/terraform-modules/storage_module"
 
   count = var.instance_count
 
