@@ -22,7 +22,10 @@ locals {
 sa_name = format("storageacct%s%s000", var.assetname, var.enviroment)
 }
 
-resource "azurerm_storage_account" "storageaccount" {
+
+module "storage_module" {
+  source = "github.com/arand18/terraform-modules//storage_module"
+
   count = var.instance_count
 
   name = "${local.sa_name}${count.index + 1}"
@@ -41,6 +44,7 @@ resource "azurerm_storage_account" "storageaccount" {
     owner = var.owner
     location = var.resource_group_location
   }
-
+  
 }
+
 
